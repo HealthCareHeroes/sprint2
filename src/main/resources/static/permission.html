@@ -485,6 +485,19 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
 	<!-- END TEMPLATE -->
 	<script type="text/javascript">
+	
+	
+	function getUrlVars() {
+		var vars = {};
+		var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
+		vars[key] = value;
+		});
+		return vars;
+		}
+	
+	
+	
+	
 		var app = angular.module("formValidationApp", []);
 		app
 				.controller(
@@ -493,19 +506,20 @@
 							$http.defaults.headers.post["Content-Type"] = "application/json";
 							$scope.submit = function() {
 								var userid = sessionStorage.getItem("userid");
-								var accessByUserId = 10002;
+								var accessByUserId = getUrlVars()["accessByUserId"];
 								var Parameters = {
-									'accessId' : id,
-									'accessByUserId' : accessByUserId,
-									'status' : $scope.permStatus
+									id : userid,
+									accessByUserId : accessByUserId,
+									status : $scope.permStatus
 								};
+								
+								alert(accessByUserId);
 								$
 										.ajax(
 												{
 													url : "http://localhost:8080/givePermission/",
 													type : 'PUT',
-													data : JSON
-															.stringify(Parameters),
+													data : JSON.stringify(Parameters),
 													headers : {
 														'x-auth-token' : localStorage.accessToken,
 														"Content-Type" : "application/json"
@@ -514,11 +528,11 @@
 												})
 										.then(
 												function(data) {
-													if (data.id != null) {
-														alert(" Permssion granted ... ");
+													if (data.id != 0) {
+														alert(" Action taken ... ");
 													}
 													window.location
-															.replace("http://localhost:8080/ui-buttons.html");
+															.replace("http://localhost:8080/permissions.html");
 												});
 							}
 						});

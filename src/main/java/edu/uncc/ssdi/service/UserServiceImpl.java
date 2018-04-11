@@ -37,7 +37,7 @@ public class UserServiceImpl implements UserService {
 
 	public User saveUser(User user) {
 
-		/*String id = null;
+		String id = null;
 		try {
 			id = sysObject.generateDigitalProfileKey(user.getId());
 
@@ -50,7 +50,7 @@ public class UserServiceImpl implements UserService {
 		} catch (DataExistsErrorException e) {
 
 			e.printStackTrace();
-		}*/
+		}
 		return userRepository.save(user);
 	}
 

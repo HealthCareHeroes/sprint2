@@ -7,18 +7,18 @@ import javax.persistence.Id;
 public class Permission {
 
 	@Id
-	private String accessId;
+	private String id;
 	
 	private long accessByUserId;
 	
 	private int status;
 
-	public String getAccessId() {
-		return accessId;
+	public String getId() {
+		return id;
 	}
 
-	public void setAccessId(String accessUserId) {
-		this.accessId = accessUserId;
+	public void setId(String id) {
+		this.id = id;
 	}
 
 	public long getAccessByUserId() {
