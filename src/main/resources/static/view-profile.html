@@ -431,7 +431,8 @@
 										<label class="col-md-3 control-label">Age:</label>
 										<div class="col-md-9">
 											<input id="age" readonly type="number" class="form-control"
-												name="age" ng-model="age"/>
+												ng-blur="ageCheck()" name="age" ng-model="age"/>
+												<span id="errorage" class="signupSpan"> </span>
 										</div>
 									</div>
 									<!-- Date of Birth -->
@@ -497,7 +498,7 @@
 								<div class="form-group">
 									<div class="btn-group pull-right">
 										<button hidden ng-click="update()" class="btn btn-primary"
-											type="submit">Update</button>
+											id="update" type="submit">Update</button>
 									</div>
 								</div>
 								<!-- <div class="form-group">
@@ -728,6 +729,19 @@
 													});
 								}
 							}
+							
+							$scope.ageCheck = function() {
+								var age = $scope.age;
+								// If the passwords match
+								if (age > 200) {
+									document.getElementById("update").disabled = true;
+									document.getElementById("errorage").innerHTML = "age is too big";
+								} else {
+									// if the passwords do NOT match
+									document.getElementById("update").disabled = false;
+									document.getElementById("errorage").innerHTML = "age is ok";
+								}
+							} // end of $scope.pwdCheck function
 						});
 		// Validation for the client side ********************
 		var jvalidate = $("#jvalidate").validate({
