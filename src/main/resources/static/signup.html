@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en" class="body-full-height">
+<head>
+<!-- META SECTION -->
+<title>Healthify</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="icon" href="favicon.ico" type="image/x-icon" />
+<!-- END META SECTION -->
+<!-- CSS INCLUDE -->
+<link rel="stylesheet" type="text/css" id="theme" href="css/theme-default.css" />
+<!-- EOF CSS INCLUDE -->
+</head>
+<body ng-app="userManagerApp">
+	<div class="login-container" ng-controller="userManagerController">
+		<div class="login-box animated fadeInDown">
+			<h1 align="center" style="color: white">Healthify</h1>
+			<div class="login-body">
+				<div class="login-title"><strong>Create account</strong></div>
+				<!-- START JQUERY VALIDATION PLUGIN -->
+				<form id="jvalidate" role="form" class="form-horizontal">
+					<div class="panel-body">
+						<!-- First Name -->
+						<div class="form-group">
+							<!-- CSS - label on fields: class: "signupLabel" -->
+							<!-- CSS - text below each field: class: "signupSpan" -->
+							<label class="signupLabel">First Name:</label><br />
+							<div class="col-md-9">
+								<input type="text" value="" name="firstName"
+									ng-model="firstName" class="form-control" /> <span
+									class="signupSpan"> required</span>
+							</div><br />
+						</div>
+						<!-- Last Name -->
+						<div class="form-group">
+							<label class="signupLabel">Last Name:</label><br />
+							<div class="col-md-9">
+								<input type="text" value="" name="lastName" ng-model="lastName"
+									class="form-control" /> <span class="signupSpan">required</span>
+							</div><br />
+						</div>
+						<!-- Email -->
+						<div class="form-group">
+							<label class="signupLabel">Email:</label><br />
+							<div class="col-md-9">
+								<input id="email1" type="text" value="" name="email"
+									ng-blur="emailCheck()" ng-model="email" class="form-control" />
+								<!-- Change text below the field if the Email is NOT available -->
+								<span id="errorEmail" class="signupSpan"> required</span>
+							</div><br />
+							<div></div>
+						</div>
+						<div class="form-group">
+							<label class="signupLabel">Password:</label><br />
+							<div class="col-md-9">
+								<input type="password" class="form-control" name="password"
+									ng-model="password" id="password2" /> <span class="signupSpan">
+									min length = 5, max length = 20</span>
+							</div>
+							<br />
+						</div>
+						<div class="form-group">
+							<label class="signupLabel">Confirm Password:</label><br />
+							<div class="col-md-9">
+								<input type="password" class="form-control" name="re-password"
+									ng-blur="pwdCheck()" ng-model="password2" />
+								<!-- Change text below the field if the passwords do NOT match -->
+								<span id="errorPassword" class="signupSpan"> required,
+									same value as Password</span>
+							</div>
+							<br />
+						</div>
+						<!-- Register button -->
+						<div class="btn-group pull-right">
+							<button ng-click="submit()" class="btn btn-primary" type="submit"
+								id="register">Register</button>
+						</div>
+					</div>
+				</form>
+				<!-- END JQUERY VALIDATION PLUGIN -->
+				<!-- <form action="index.html" class="form-horizontal" method="post" id="jvalidate" role="form" class="form-horizontal" action="javascript:alert('Form #validate2 submited');">
+                    <div class="form-group">
+                        <div class="col-md-12">
+                            <input type="text" class="form-control" placeholder="Email"/>
+                            <span class="help-block">required email</span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-12"><input type="password" class="form-control" placeholder="Password"/></div>
+                    </div>
+                        <div class="form-group">
+                        <div class="col-md-12"><input type="password" class="form-control" placeholder="Confirm Password"/></div>
+                    </div>
+                    <div class="form-group">
+                      <div class="col-md-3"></div>
+                        <div class="col-md-6"><button class="btn btn-info btn-block">Register</button></div>
+                    </div>
+                    <div class="login-or">OR</div>
+                    <div class="form-group">
+                        <div class="col-md-4">                            
+                            <button class="btn btn-info btn-block btn-google"><span class="fa fa-google-plus"></span> Google</button>
+                        </div>
+                    </div>
+                    </form> -->
+			</div>
+			<div class="login-footer">
+				<div class="pull-left">&copy; 2018 AppName</div>
+				<!-- 
+				<div class="pull-right">
+					<a href="#">About</a> | <a href="#">Privacy</a> | <a href="#">Contact Us</a>
+				</div>
+				-->
+			</div>
+		</div>
+	</div>
+	<!-- START SCRIPTS -->
+	<!-- START PLUGINS -->
+	<script type="text/javascript" src="js/plugins/jquery/jquery.min.js"></script>
+	<script type="text/javascript" src="js/plugins/jquery/jquery-ui.min.js"></script>
+	<script type="text/javascript" src="js/plugins/bootstrap/bootstrap.min.js"></script>
+	<!-- END PLUGINS -->
+	<!-- THIS PAGE PLUGINS -->
+	<script type='text/javascript' src='js/plugins/icheck/icheck.min.js'></script>
+	<script type="text/javascript" src="js/plugins/mcustomscrollbar/jquery.mCustomScrollbar.min.js"></script>
+	<script type='text/javascript' src='js/plugins/bootstrap/bootstrap-datepicker.js'></script>
+	<script type='text/javascript' src='js/plugins/bootstrap/bootstrap-select.js'></script>
+	<script type='text/javascript' src='js/plugins/validationengine/languages/jquery.validationEngine-en.js'></script>
+	<script type='text/javascript' src='js/plugins/validationengine/jquery.validationEngine.js'></script>
+	<script type='text/javascript' src='js/plugins/jquery-validation/jquery.validate.js'></script>
+	<script type='text/javascript' src='js/plugins/maskedinput/jquery.maskedinput.min.js'></script>
+	<!-- END THIS PAGE PLUGINS -->
+	<!-- START TEMPLATE -->
+	<script type="text/javascript" src="js/settings.js"></script>
+	<script type="text/javascript" src="js/plugins.js"></script>
+	<script type="text/javascript" src="js/actions.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+	<!-- END TEMPLATE -->
+	<script type="text/javascript">
+		var app = angular.module("userManagerApp", []);
+		app
+				.controller(
+						"userManagerController",
+						function($scope, $http) {
+							$http.defaults.headers.post["Content-Type"] = "application/json";
+							// validate email is UNIQUE *****************************************
+							$scope.emailCheck = function() {
+								var email12 = $scope.email;
+								var urls = "http://localhost:8080/checkEmail/"
+										+ $scope.email;
+								$
+										.ajax({
+											url : urls,
+											type : "get"
+										})
+										.then(
+												function(data) {
+													// if the email matches an existing User
+													if (data.email == email12) {
+														// disable Register button
+														document.getElementById("register").disabled = true;
+														// Email not available
+														document.getElementById("errorEmail").innerHTML = "Email not available";
+														document.getElementById("errorEmail").style = "ff00000";
+													} else {
+														// make sure register is enabled again
+														document.getElementById("register").disabled = false;
+														document.getElementById("errorEmail").innerHTML = "Email available";
+														document.getElementById("errorEmail").style = Color.White;
+													}
+												});
+							} // end of $scope.emailCheck function
+							// validate Password ************************************************
+							$scope.pwdCheck = function() {
+								var pwd1 = $scope.password;
+								var pwd2 = $scope.password2;
+								// If the passwords match
+								if (pwd1 == pwd2) {
+									document.getElementById("register").disabled = false;
+									document.getElementById("errorPassword").innerHTML = "Passwords match!";
+								} else {
+									// if the passwords do NOT match
+									document.getElementById("register").disabled = true;
+									document.getElementById("errorPassword").innerHTML = "Passwords do NOT match!";
+								}
+							} // end of $scope.pwdCheck function
+							$scope.submit = function() {
+								var Parameters = {
+									firstName : $scope.firstName,
+									lastName : $scope.lastName,
+									email : $scope.email,
+									password : $scope.password
+								};
+								// add the user
+								var urlBase = "http://localhost:8080/addUser";
+								if ($scope.firstName == ""
+										|| $scope.lastName == ""
+										|| $scope.email == ""
+										|| $scope.password == ""
+										|| $scope.password2 == "") {
+									alert("Insufficient Data! Must provide first name, last name, email, & password");
+								} else {
+									$
+											.ajax(
+													{
+														url : "http://localhost:8080/adduser/",
+														type : "post",
+														data : Parameters
+													})
+											.then(
+													function(data) {
+														alert("Welcome "
+																+ data.firstName);
+														sessionStorage.setItem(
+																"userid",
+																data.id);
+														window.location
+																.replace("http://localhost:8080/index.html");
+													});
+								} // end of else
+							} // end of $scope.submit function
+						});
+		var jvalidate = $("#jvalidate").validate({
+			ignore : [],
+			rules : {
+				firstName : {
+					required : true,
+					minlength : 1,
+					maxlength : 50
+				},
+				lastName : {
+					required : true,
+					minlength : 1,
+					maxlength : 50
+				},
+				email : {
+					required : true,
+					email : true
+				},
+				password : {
+					required : true,
+					minlength : 5,
+					maxlength : 20
+				},
+				're-password' : {
+					required : true,
+					minlength : 5,
+					maxlength : 20,
+					equalTo : "#password2"
+				}
+			}
+		// end of rules
+		}); // end of validate
+	</script>
+	<!-- END SCRIPTS -->
+</body>
+</html>
