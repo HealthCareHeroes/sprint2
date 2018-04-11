@@ -61,6 +61,7 @@ public class UserControllerTest1 {
 	    UserRepository userRepository;
 	   
 	    
+	    
 	 // This object will be magically initialized by the initFields method below.
 	    private JacksonTester<User> JsonUser;
 	 

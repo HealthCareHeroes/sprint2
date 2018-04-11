@@ -32,6 +32,7 @@ public class UserServiceImpl implements UserService {
     @Autowired
     public void setUserRepository(UserRepository userRepository) {
         this.userRepository = userRepository;
+        
     }
 
 	public User saveUser(User user) {
