@@ -37,14 +37,14 @@ public class UserServiceTest {
 	
 	private UserServiceImpl userServiceImpl;
 	
-/*	@Bean
+   @Bean
 	public UserRepository todoService() {
 	        return Mockito.mock(UserRepository.class);}
 	
 	@Bean
 	private Systems todoService1() {
         return Mockito.mock(Systems.class);}
-	*/
+	
 	
 	@Mock
 	private Systems sysObject;
@@ -77,8 +77,7 @@ public class UserServiceTest {
         when(userRepository.save(testUser)).thenReturn(testUser);
         // Act         
         User savedUser = userServiceImpl.saveUser(testUser);
-        //// Assert
-        
+        //// Assert       
         
         assertEquals(savedUser, testUser);
        
@@ -95,8 +94,7 @@ public class UserServiceTest {
         assertEquals(user, testUser);
 		
 	}
-	
-	
+		
 	
 	
 	
