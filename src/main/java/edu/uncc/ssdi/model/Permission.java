@@ -13,13 +13,33 @@ public class Permission {
 	
 	private int status;
 
+	
+	public Permission() {
+	
+	}
+	
+	
+	
+	public Permission(String id, long accessByUserId, int status) {
+		super();
+		this.id = id;
+		this.accessByUserId = accessByUserId;
+		this.status = status;
+	}
+
+	
+
 	public String getId() {
 		return id;
 	}
 
+
+
 	public void setId(String id) {
 		this.id = id;
 	}
+
+
 
 	public long getAccessByUserId() {
 		return accessByUserId;
