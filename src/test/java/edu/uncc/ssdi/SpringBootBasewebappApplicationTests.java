@@ -2,9 +2,14 @@ package edu.uncc.ssdi;
 import static org.junit.Assert.assertTrue;
 import static org.mockito.BDDMockito.given;
 import static org.mockito.Mockito.mock;
+
 import java.util.ArrayList;
 import java.util.Collection;
+
 import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.junit4.SpringRunner;
 
 public class SpringBootBasewebappApplicationTests {
 	
@@ -24,7 +29,7 @@ public class SpringBootBasewebappApplicationTests {
 	@Test
 	public void testEmptyCollection() {
 		//System.out.println("Test Case 1");
-		
+
 		Collection collection = new ArrayList();
 		assertTrue(collection.isEmpty());
 	}

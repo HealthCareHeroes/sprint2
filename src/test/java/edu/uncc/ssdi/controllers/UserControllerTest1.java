@@ -1,6 +1,8 @@
 package edu.uncc.ssdi.controllers;
 
 import edu.uncc.ssdi.service.*;
+import temp.WebConfig;
+
 import static org.hamcrest.CoreMatchers.is;
 import static org.mockito.Mockito.doNothing;
 import static org.mockito.Mockito.times;
@@ -12,8 +14,11 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
+
 import java.util.ArrayList;
 import java.util.Arrays;
+
+import org.hibernate.jdbc.Expectations;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -25,6 +30,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.json.JacksonTester;
 import org.springframework.http.MediaType;
+import org.springframework.test.context.ContextConfiguration;
+import org.springframework.test.context.web.WebAppConfiguration;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
@@ -37,6 +44,8 @@ import edu.uncc.ssdi.repositories.*;
 
 @RunWith(MockitoJUnitRunner.class)
 @SpringBootTest
+@WebAppConfiguration
+@ContextConfiguration(classes = {WebConfig.class})
 public class UserControllerTest1 {
 	
 		@Autowired
@@ -80,9 +89,16 @@ public class UserControllerTest1 {
 	    }
 	    
 	    @Test
-		public void testAddUser() throws Exception{  	
+		public void testAddUser() throws Exception{  
+	    		
+	    		User user = new User(10002L, "mpq@test.com", "pwd123", "patient", "Zoe", "Duan","male", "20", "9201", "APT315", "Charlotte", "NC", "28223", "704123456");      
+	    		
+	    		User savedUser = userService.saveUser(user);
+	    		
+	    		when(userController.addNewUser("abc@test.com", "pwd123", "Zoe", "Duan")).thenReturn(savedUser);
 	    	
-			mockMvc.perform(MockMvcRequestBuilders.post("/adduser/")
+	    		
+	    		mockMvc.perform(MockMvcRequestBuilders.post("/adduser/")
 					.contentType(MediaType.APPLICATION_JSON)
 					.param("email", "abc@test.com")
 					.param("password", "pwd123")
