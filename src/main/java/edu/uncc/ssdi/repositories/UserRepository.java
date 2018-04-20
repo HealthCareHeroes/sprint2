@@ -18,5 +18,6 @@ public interface UserRepository extends CrudRepository<User, Long> {
 //	   List<User> fetchArticles(@Param("email") String email, @Param("category") String category);
 	List<User> findByEmail(String email);
 	List<User> findByDigitalId(String name);
+	List<User> findByRole(String role);
 }
 

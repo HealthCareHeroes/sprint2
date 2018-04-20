@@ -2,18 +2,17 @@
 <html lang="en">
 <head>
 <!-- META SECTION -->
-<title>Healthify</title>
+<title>Healthify </title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link rel="icon" href="favicon.ico" type="image/x-icon" />
 <!-- END META SECTION -->
 <!-- CSS INCLUDE -->
-<link rel="stylesheet" type="text/css" id="theme"
-	href="css/theme-default.css" />
+<link rel="stylesheet" type="text/css" id="theme" href="css/theme-default.css" />
 <!-- EOF CSS INCLUDE -->
 </head>
-<body ng-app="userManagerApp">
+<body>
 	<!-- START PAGE CONTAINER -->
 	<div class="page-container">
 		<!-- START PAGE SIDEBAR -->
@@ -135,7 +134,7 @@
 								class="fa fa-pencil-square-o"></span> Panels</a></li>
 						<li><a href="ui-icons.html"><span class="fa fa-magic"></span>
 								Icons</a>
-							<div class="informer informer-warning">+679</div></li>
+						<div class="informer informer-warning">+679</div></li>
 						<li><a href="ui-typography.html"><span
 								class="fa fa-pencil"></span> Typography</a></li>
 						<li><a href="ui-portlet.html"><span class="fa fa-th"></span>
@@ -144,12 +143,10 @@
 								class="fa fa-arrows-h"></span> Sliders</a></li>
 						<li><a href="ui-alerts-popups.html"><span
 								class="fa fa-warning"></span> Alerts & Popups</a></li>
-						<li><a href="ui-lists.html"><span class="fa fa-list-ul"></span>
-								Lists</a></li>
-						<li><a href="ui-tour.html"><span class="fa fa-random"></span>
-								Tour</a></li>
+						<li><a href="ui-lists.html"><span class="fa fa-list-ul"></span>Lists</a></li>
+						<li><a href="ui-tour.html"><span class="fa fa-random"></span>Tour</a></li>
 					</ul></li>
-				<li class="xn-openable active"><a href="#"><span
+				<li class="xn-openable"><a href="#"><span
 						class="fa fa-pencil"></span> <span class="xn-text">Forms</span></a>
 					<ul>
 						<li><a href="form-layouts-two-column.html"><span
@@ -167,7 +164,7 @@
 							</ul></li>
 						<li><a href="form-elements.html"><span
 								class="fa fa-file-text-o"></span> Elements</a></li>
-						<li class="active"><a href="form-validation.html"><span
+						<li><a href="form-validation.html"><span
 								class="fa fa-list-alt"></span> Validation</a></li>
 						<li><a href="form-wizards.html"><span
 								class="fa fa-arrow-right"></span> Wizards</a></li>
@@ -176,14 +173,14 @@
 						<li><a href="form-file-handling.html"><span
 								class="fa fa-floppy-o"></span> File Handling</a></li>
 					</ul></li>
-				<li class="xn-openable"><a href="tables.html"><span
+				<li class="xn-openable active"><a href="tables.html"><span
 						class="fa fa-table"></span> <span class="xn-text">Tables</span></a>
 					<ul>
 						<li><a href="table-basic.html"><span
 								class="fa fa-align-justify"></span> Basic</a></li>
 						<li><a href="table-datatables.html"><span
 								class="fa fa-sort-alpha-desc"></span> Data Tables</a></li>
-						<li><a href="table-export.html"><span
+						<li class="active"><a href="table-export.html"><span
 								class="fa fa-download"></span> Export Tables</a></li>
 					</ul></li>
 				<li class="xn-openable"><a href="#"><span
@@ -205,9 +202,8 @@
 								<li class="xn-openable"><a href="#">Third Level</a>
 									<ul>
 										<li class="xn-openable"><a href="#">Fourth Level</a>
-											<ul>
-												<li><a href="#">Fifth Level</a></li>
-											</ul></li>
+											<ul><li><a href="#">Fifth Level</a></li></ul>
+										</li>
 									</ul></li></ul></li></ul></li> -->
 			</ul>
 			<!-- END X-NAVIGATION -->
@@ -228,13 +224,13 @@
 			<ul class="x-navigation x-navigation-horizontal x-navigation-panel">
 				<!-- TOGGLE NAVIGATION -->
 				<!-- <li class="xn-icon-button"><a href="#"
-					class="x-navigation-minimize"> <span class="fa fa-dedent"></span></a>
+					class="x-navigation-minimize"><span class="fa fa-dedent"></span></a>
 				</li> -->
 				<!-- END TOGGLE NAVIGATION -->
 				<!-- SEARCH -->
 				<!-- <li class="xn-search">
 					<form role="form">
-						<input readonly type="text" name="search" placeholder="Search" />
+						<input type="text" name="search" placeholder="Search..." />
 					</form>
 				</li> -->
 				<!-- END SEARCH -->
@@ -243,14 +239,16 @@
 					class="mb-control" data-box="#mb-signout"><span
 						class="fa fa-sign-out"></span></a></li>
 				<!-- END SIGN OUT -->
-				<!-- MESSAGES 
-				<li class="xn-icon-button pull-right"><a href="#"><span
+				<!-- MESSAGES -->
+				<!-- <li class="xn-icon-button pull-right"><a href="#"><span
 						class="fa fa-comments"></span></a>
 					<div class="informer informer-danger">4</div>
 					<div
 						class="panel panel-primary animated zoomIn xn-drop-left xn-panel-dragging">
 						<div class="panel-heading">
-							<h3 class="panel-title"><span class="fa fa-comments"></span> Messages</h3>
+							<h3 class="panel-title">
+								<span class="fa fa-comments"></span> Messages
+							</h3>
 							<div class="pull-right">
 								<span class="label label-danger">4 new</span>
 							</div>
@@ -271,8 +269,7 @@
 							</a> <a href="#" class="list-group-item">
 								<div class="list-group-status status-away"></div> <img
 								src="assets/images/users/user3.jpg" class="pull-left"
-								alt="Nadia Ali" /> <span class="contacts-title">Nadia
-									Ali</span>
+								alt="Nadia Ali" /> <span class="contacts-title">Nadia Ali</span>
 								<p>Mauris vel eros ut nunc rhoncus cursus sed</p>
 							</a> <a href="#" class="list-group-item">
 								<div class="list-group-status status-offline"></div> <img
@@ -285,17 +282,21 @@
 						<div class="panel-footer text-center">
 							<a href="pages-messages.html">Show all messages</a>
 						</div>
-					</div></li>
+					</div></li> -->
 				<!-- END MESSAGES -->
-				<!-- TASKS 
-				<li class="xn-icon-button pull-right"><a href="#"><span
+				<!-- TASKS -->
+				<!-- <li class="xn-icon-button pull-right"><a href="#"><span
 						class="fa fa-tasks"></span></a>
 					<div class="informer informer-warning">3</div>
 					<div
 						class="panel panel-primary animated zoomIn xn-drop-left xn-panel-dragging">
 						<div class="panel-heading">
-							<h3 class="panel-title"><span class="fa fa-tasks"></span> Tasks</h3>
-							<div class="pull-right"><span class="label label-warning">3 active</span></div>
+							<h3 class="panel-title">
+								<span class="fa fa-tasks"></span> Tasks
+							</h3>
+							<div class="pull-right">
+								<span class="label label-warning">3 active</span>
+							</div>
 						</div>
 						<div class="panel-body list-group scroll" style="height: 200px;">
 							<a class="list-group-item" href="#"> <strong>Phasellus
@@ -333,156 +334,71 @@
 						<div class="panel-footer text-center">
 							<a href="pages-tasks.html">Show all tasks</a>
 						</div>
-					</div></li>
+					</div></li> -->
 				<!-- END TASKS -->
 			</ul>
 			<!-- END X-NAVIGATION VERTICAL -->
 			<!-- START BREADCRUMB -->
 			<!-- <ul class="breadcrumb">
 				<li><a href="#">Home</a></li>
-				<li><a href="#">Profile</a></li>
-				<li class="active">View Profile</li>
+				<li><a href="#">Tables</a></li>
+				<li class="active">Basic</li>
 			</ul> -->
 			<!-- END BREADCRUMB -->
 			<!-- PAGE TITLE -->
 			<div class="page-title">
 				<h2>
-					<span class="fa fa-arrow-circle-o-left"></span> Profile
+					<span class="fa fa-arrow-circle-o-left"></span> Doctors
 				</h2>
 			</div>
 			<!-- END PAGE TITLE -->
-			
 			<!-- PAGE CONTENT WRAPPER -->
 			<div class="page-content-wrap">
 				<div class="row">
-					<div class="col-md-3"></div>
-					<!-- Implementation of Sprint 1 **************************************************-->
-					<!-- click on edit profile -->
-					<div class="btn-group pull-right">
-						<button class="btn btn-primary" type="submit"
-							onclick="editable();">Edit Profile</button>
-					</div>
-					<div class="col-md-5">
-						<!-- START JQUERY VALIDATION PLUGIN -->
-						<div class="block" ng-controller="userManagerController">
-							<form id="jvalidate" role="form" class="form-horizontal"
-								action="javascript:alert('Form #validate2 submited');">
-								<div class="panel-body">
-									<!-- Email -->
-									<div class="form-group">
-										<label class="col-md-3 control-label">Email:</label>
-										<div class="col-md-9">
-											<input style="color: #616161; "
-												id="email"
-												readonly type="text" value="" ng-model="email" name="email"
-												class="form-control" /> <span class="help-block">Cannot
-												change</span>
-										</div>
-									</div>
-									<!-- First Name -->
-									<div class="form-group">
-										<label class="col-md-3 control-label">First Name:</label>
-										<div class="col-md-9">
-											<input style="color: #616161;" id="firstName" readonly
-												type="text" ng-model="firstName" class="form-control"
-												value="" /> <span class="help-block">Cannot change</span>
-										</div>
-									</div>
-
-									<!-- Last Name -->
-									<div class="form-group">
-										<label class="col-md-3 control-label">Last Name:</label>
-										<div class="col-md-9">
-											<input style="color: #616161;" id="lastName" readonly
-												type="text" ng-model="lastName" class="form-control"
-												value="" /> <span class="help-block">Cannot change</span>
-										</div>
-									</div>
-									<!-- Last Name -->
-									<div class="form-group">
-										<label class="col-md-3 control-label">Password</label>
-										<div class="col-md-9">
-											<input style="color: #616161;" id="password" readonly
-												type="text" ng-model="password" class="form-control"
-												value="" />
-										</div>
-									</div>
-								
-									
-							
-									<!-- Age -->
-									<div class="form-group">
-										<label class="col-md-3 control-label">Age:</label>
-										<div class="col-md-9">
-											<input id="age" readonly type="number" class="form-control"
-												ng-blur="ageCheck()" name="age" ng-model="age"/>
-												<span id="errorage" class="signupSpan"> </span>
-										</div>
-									</div>
-									
-								
-									<!-- Address 1 -->
-									<div class="form-group">
-										<label class="col-md-3 control-label">Address Line 1:</label>
-										<div class="col-md-9">
-											<input id="addressLine1" readonly type="text"
-												class="form-control" name="addressLine1"
-												ng-model="addressLine1" />
-										</div>
-									</div>
-									<!-- Address 2 -->
-									<div class="form-group">
-										<label class="col-md-3 control-label">Address Line 2:</label>
-										<div class="col-md-9">
-											<input id="addressLine2" readonly type="text"
-												class="form-control" name="addressLine2"
-												ng-model="addressLine2" />
-										</div>
-									</div>
-									<!-- City -->
-									<div class="form-group">
-										<label class="col-md-3 control-label">City:</label>
-										<div class="col-md-9">
-											<input id="city" readonly type="text" class="form-control"
-												name="city" ng-model="city" />
-										</div>
-									</div>
-									<!-- State -->
-									<div class="form-group">
-										<label class="col-md-3 control-label">State:</label>
-										<div class="col-md-9">
-											<input id="state" readonly type="text" class="form-control"
-												name="state" ng-model="state" />
-										</div>
-									</div>
-									<!-- Phone -->
-									<div class="form-group">
-										<label class="col-md-3 control-label">Phone:</label>
-										<div class="col-md-9">
-											<input id="phone" readonly type="text"
-												class="mask_phone form-control" value="" ng-model="phone" />
-										</div>
-									</div>
-									<!-- Zip Code -->
-									<div class="form-group">
-										<label class="col-md-3 control-label">Zip Code:</label>
-										<div class="col-md-9">
-											<input id="zip" readonly type="text" class="form-control"
-												value="" ng-model="zip" />
-										</div>
-									</div>
-								</div>
-								<!-- click on update -->
-								<div class="form-group">
-									<div class="btn-group pull-right">
-										<button ng-click="update()" class="btn btn-primary"
-											id="update" type="submit">Update</button>
-									</div>
-								</div>
-							
-							</form>
-							<!-- END JQUERY VALIDATION PLUGIN -->
+					<div class="col-md-12">
+						<!-- START DATATABLE EXPORT -->
+						<div class="panel panel-default">
+							<!--  <div class="panel-heading">
+                                    <h3 class="panel-title">DataTable Export</h3>
+                                    <div class="btn-group pull-right">
+                                        <button class="btn btn-danger dropdown-toggle" data-toggle="dropdown"><i class="fa fa-bars"></i> Export Data</button>
+                                        <ul class="dropdown-menu">
+                                            <li><a href="#" onClick ="$('#customers2').tableExport({type:'json',escape:'false'});"><img src='img/icons/json.png' width="24"/> JSON</a></li>
+                                            <li><a href="#" onClick ="$('#customers2').tableExport({type:'json',escape:'false',ignoreColumn:'[2,3]'});"><img src='img/icons/json.png' width="24"/> JSON (ignoreColumn)</a></li>
+                                            <li><a href="#" onClick ="$('#customers2').tableExport({type:'json',escape:'true'});"><img src='img/icons/json.png' width="24"/> JSON (with Escape)</a></li>
+                                            <li class="divider"></li>
+                                            <li><a href="#" onClick ="$('#customers2').tableExport({type:'xml',escape:'false'});"><img src='img/icons/xml.png' width="24"/> XML</a></li>
+                                            <li><a href="#" onClick ="$('#customers2').tableExport({type:'sql'});"><img src='img/icons/sql.png' width="24"/> SQL</a></li>
+                                            <li class="divider"></li>
+                                            <li><a href="#" onClick ="$('#customers2').tableExport({type:'csv',escape:'false'});"><img src='img/icons/csv.png' width="24"/> CSV</a></li>
+                                            <li><a href="#" onClick ="$('#customers2').tableExport({type:'txt',escape:'false'});"><img src='img/icons/txt.png' width="24"/> TXT</a></li>
+                                            <li class="divider"></li>
+                                            <li><a href="#" onClick ="$('#customers2').tableExport({type:'excel',escape:'false'});"><img src='img/icons/xls.png' width="24"/> XLS</a></li>
+                                            <li><a href="#" onClick ="$('#customers2').tableExport({type:'doc',escape:'false'});"><img src='img/icons/word.png' width="24"/> Word</a></li>
+                                            <li><a href="#" onClick ="$('#customers2').tableExport({type:'powerpoint',escape:'false'});"><img src='img/icons/ppt.png' width="24"/> PowerPoint</a></li>
+                                            <li class="divider"></li>
+                                            <li><a href="#" onClick ="$('#customers2').tableExport({type:'png',escape:'false'});"><img src='img/icons/png.png' width="24"/> PNG</a></li>
+                                            <li><a href="#" onClick ="$('#customers2').tableExport({type:'pdf',escape:'false'});"><img src='img/icons/pdf.png' width="24"/> PDF</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                -->
+							<div class="panel-body">
+								<table id="medRecords" class="table datatable" datatable="ng"
+									dt-options="vm.dtOptions">
+									<thead>
+										<tr>
+											<th>First Name</th>
+											<th>Last Name</th>
+											<th>Email</th>
+										</tr>
+									</thead>
+									<tbody>
+									</tbody>
+								</table>
+							</div>
 						</div>
+						<!-- END DATATABLE EXPORT -->
 					</div>
 				</div>
 			</div>
@@ -493,6 +409,28 @@
 	<!-- END PAGE CONTAINER -->
 	<!-- MESSAGE BOX-->
 	<div class="message-box animated fadeIn" data-sound="alert"
+		id="mb-remove-row">
+		<div class="mb-container">
+			<div class="mb-middle">
+				<div class="mb-title">
+					<span class="fa fa-times"></span> Remove <strong>Data</strong> ?
+				</div>
+				<div class="mb-content">
+					<p>Are you sure you want to remove this row?</p>
+					<p>Press Yes if you sure.</p>
+				</div>
+				<div class="mb-footer">
+					<div class="pull-right">
+						<button class="btn btn-success btn-lg mb-control-yes">Yes</button>
+						<button class="btn btn-default btn-lg mb-control-close">No</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- END MESSAGE BOX-->
+	<!-- MESSAGE BOX-->
+	<div class="message-box animated fadeIn" data-sound="alert"
 		id="mb-signout">
 		<div class="mb-container">
 			<div class="mb-middle">
@@ -501,7 +439,7 @@
 				</div>
 				<div class="mb-content">
 					<p>Are you sure you want to log out?</p>
-					<p>Press No if you want to continue work. Press Yes to logout
+					<p>Press No if youwant to continue work. Press Yes to logout
 						current user.</p>
 				</div>
 				<div class="mb-footer">
@@ -514,7 +452,6 @@
 		</div>
 	</div>
 	<!-- END MESSAGE BOX-->
-
 	<!-- START PRELOADS -->
 	<audio id="audio-alert" src="audio/alert.mp3" preload="auto"></audio>
 	<audio id="audio-fail" src="audio/fail.mp3" preload="auto"></audio>
@@ -526,242 +463,89 @@
 	<script type="text/javascript"
 		src="js/plugins/bootstrap/bootstrap.min.js"></script>
 	<!-- END PLUGINS -->
-	<!-- THIS PAGE PLUGINS -->
+	<!-- START THIS PAGE PLUGINS-->
 	<script type='text/javascript' src='js/plugins/icheck/icheck.min.js'></script>
 	<script type="text/javascript"
 		src="js/plugins/mcustomscrollbar/jquery.mCustomScrollbar.min.js"></script>
-	<script type='text/javascript'
-		src='js/plugins/bootstrap/bootstrap-datepicker.js'></script>
-	<script type='text/javascript'
-		src='js/plugins/bootstrap/bootstrap-select.js'></script>
-	<script type='text/javascript'
-		src='js/plugins/validationengine/languages/jquery.validationEngine-en.js'></script>
-	<script type='text/javascript'
-		src='js/plugins/validationengine/jquery.validationEngine.js'></script>
-	<script type='text/javascript'
-		src='js/plugins/jquery-validation/jquery.validate.js'></script>
-	<script type='text/javascript'
-		src='js/plugins/maskedinput/jquery.maskedinput.min.js'></script>
-	<!-- END THIS PAGE PLUGINS -->
+	<script type="text/javascript"
+		src="js/plugins/datatables/jquery.dataTables.min.js"></script>
+	<script type="text/javascript"
+		src="js/plugins/tableexport/tableExport.js"></script>
+	<script type="text/javascript"
+		src="js/plugins/tableexport/jquery.base64.js"></script>
+	<script type="text/javascript"
+		src="js/plugins/tableexport/html2canvas.js"></script>
+	<script type="text/javascript"
+		src="js/plugins/tableexport/jspdf/libs/sprintf.js"></script>
+	<script type="text/javascript"
+		src="js/plugins/tableexport/jspdf/jspdf.js"></script>
+	<script type="text/javascript"
+		src="js/plugins/tableexport/jspdf/libs/base64.js"></script>
+	<!-- END THIS PAGE PLUGINS-->
 	<!-- START TEMPLATE -->
 	<script type="text/javascript" src="js/settings.js"></script>
 	<script type="text/javascript" src="js/plugins.js"></script>
 	<script type="text/javascript" src="js/actions.js"></script>
 	<!-- END TEMPLATE -->
-
-
-	<script
-		src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"
-		type="text/javascript">
-		// 	alert("session : "+sessionStorage.getItem("userid"));
-		//                 $.ajax({
-		//                     url: "http://localhost:8080/user/1"
-		//                 }).then(function(data) {
-		//                    $('.greeting-id').append(data.id);
-		//                    $('.greeting-email').append(data.email);
-		//                 });
-
-		//     var app = angular.module("app", []);
-		//     app.controller("HelloController", function($scope) {
-		//     //  $scope.message = "Dr. Smith";	
-		//       $scope.message = "Hello";
-
-		//     });
-	</script>
-
-
+	<script type='text/javascript'
+		src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
 	<script type="text/javascript">
-		// Edit Profile - change fields from read only to editable ************************************
-		function editable() {
-			/* window.location
-			.replace("http://localhost:8080/edit-profile.html");
-			 */
-			// Make the elements editable  
-			//document.getElementById("email").readOnly = true;
-			//document.getElementById("firstName").readOnly = true;
-			//document.getElementById("lastName").readOnly = true;
-			document.getElementById("age").readOnly = false;
-			document.getElementById("password").readOnly = false;
-			/* // male
-			document.getElementById("gender").disabled = false;
-			// female
-			document.getElementById("gender1").disabled = false; */
-			// date of birth
-			//document.getElementById("dob").readOnly = false;
-			document.getElementById("addressLine1").readOnly = false;
-			document.getElementById("addressLine2").readOnly = false;
-			document.getElementById("city").readOnly = false;
-			document.getElementById("state").readOnly = false;
-			document.getElementById("zip").readOnly = false;
-			document.getElementById("phone").readOnly = false;
-		}
-
-		/* 	var genderDisplay;		
-			var gender1 = document.getElementById("gender1").value;
-			if (gender1 != null)
-				 genderDisplay = gender1;			 
-			else genderDisplay = document.getElementById("gender").value; */
-
-		$(document)
-				.ready(
-						function() {
-							var session = sessionStorage.getItem("userid");
-							var urls = "http://localhost:8080/getUser/"
-									+ session
-							//	alert(urls);
-							$
-									.ajax({
-										url : urls
-									})
-									.then(
-											function(data) {
-												document
-														.getElementById("email").value = data.email;
-												document
-														.getElementById("firstName").value = data.firstName;
-												document
-														.getElementById("lastName").value = data.lastName;
-												document
-														.getElementById("password").value = data.password;
-												document.getElementById("age").value = data.age;
-												//document.getElementById("dob").value = data.dob;
-												//document.getElementById("gender").value = data.gender;
-												//document.getElementById("gender1").value = data.gender1;
-												document
-														.getElementById("addressLine1").value = data.addressLine1;
-												document
-														.getElementById("addressLine2").value = data.addressLine2;
-												document.getElementById("city").value = data.city;
-												document
-														.getElementById("state").value = data.state;
-												document
-														.getElementById("phone").value = data.phone;
-												document.getElementById("zip").value = data.zip;
-												$('.profile-data-name')
-														.append(
-																data.firstName
-																		+ " "
-																		+ data.lastName);
-											});
-						});
-		var id = sessionStorage.getItem("userid");
-		var app = angular.module("userManagerApp", []);
-		app
-				.controller(
-						"userManagerController",
+        $(document).ready(function() {
+        	ajaxGet();
+        	// DO GET
+        	function ajaxGet(){
+        		$.ajax({
+        			type : "GET",
+        			url : "http://localhost:8080/getUsers/doctor",
+        			success: function(result){   			
+        				$.each(result, function(i, doctor){
+        					var recordRow = '<tr>' +
+        										'<td>' + doctor.firstName + '</td>' +
+        										'<td>' + doctor.lastName + '</td>' +
+        										'<td>' + doctor.email + '</td>' +
+        										/* '<td>' + record.dateOfVisit + '</td>' +
+        										'<td>' + record.dateOfRelease + '</td>' +
+        										'<td>' + record.releaseStatus + '</td>' + */
+        									  '</tr>';
+        					$('#medRecords tbody').append(recordRow);
+        		        });
+        			},
+        			error : function(e) {
+        				alert("ERROR: ", e);
+        				console.log("ERROR: ", e);
+        			}
+        		});	
+        	}
+        })
+        
+    	/*$(document).ready(function() {
+			var session = sessionStorage.getItem("userid");
+			var urls = "http://localhost:8080/getUsers/"
+			//	alert(urls);
+			$.ajax({
+				url : urls
+			}).then(function(data) {
+				document.getElementById("emailval1").value = data.email;
+				// will need to change to name ******************************************************
+				$('.profile-data-name').append(data.email);
+			});
+		}); 
+    	
+    	$(document).ready(function() {
+		var app = angular.module("recApp", ['datatables']);
+		app.controller(
+						"recController",
 						function($scope, $http) {
-							$http.defaults.headers.post["Content-Type"] = "application/json";
-							$scope.update = function(id) {
-								var Parameters = {
-									email : document.getElementById("email").value,
-									password : document
-											.getElementById("password").value,
-									firstName : document
-											.getElementById("firstName").value,
-									lastName : document
-											.getElementById("lastName").value,
-									//gender : document.getElementById("gender").value,
-									age : document.getElementById("age").value,
-									addressLine1 : document
-											.getElementById("addressLine1").value,
-									addressLine2 : document
-											.getElementById("addressLine2").value,
-									city : document.getElementById("city").value,
-									state : document.getElementById("state").value,
-									phone : document.getElementById("phone").value,
-									zip : document.getElementById("zip").value
-								};
-								var userid = sessionStorage.getItem("userid");
-								if (userid == null) {
-									alert("Fill Mandatory fields");
-								} else {
-									alert("email " + JSON.stringify(Parameters));
-									$
-											.ajax(
-													{
-														url : "http://localhost:8080/updateUser/"
-																+ userid,
-														type : "PUT",
-														data : JSON
-																.stringify(Parameters),
-														contentType : 'application/json',
-														dataType : "json",
-														processdata : false
-
-													})
-											.then(
-													function(data) {
-														// if data not null, should display the alert
-														// NOTE: Comment above is NOT coded yet *********************************
-														alert("Data updated successfully");
-														sessionStorage.setItem(
-																"userid",
-																data.id);
-														window.location
-																.replace("http://localhost:8080/view-profile.html");
-													});
-								}
-							}
-							
-							$scope.ageCheck = function() {
-								var age = $scope.age;
-								// If the passwords match
-								if (age > 200) {
-									document.getElementById("update").disabled = true;
-									document.getElementById("errorage").innerHTML = "age is too big";
-								} else {
-									// if the passwords do NOT match
-									document.getElementById("update").disabled = false;
-									document.getElementById("errorage").innerHTML = "age is ok";
-								}
-							} // end of $scope.pwdCheck function
+							var urls = "http://localhost:8080/getUsers" ;
+							$.ajax({
+								url : urls
+							}).then(function(data) {
+								alert("HI");
+								$scope.recList = data;
+							});
 						});
-		// Validation for the client side ********************
-		var jvalidate = $("#jvalidate").validate({
-			ignore : [],
-			rules : {
-				login : {
-					required : true,
-					minlength : 2,
-					maxlength : 8
-				},
-				email : {
-					required : true,
-					email : true
-				},
-				password : {
-					required : false,
-					minlength : 5,
-					maxlength : 20
-				},
-				// NOTE - Not needed for view page
-				/* // TO DO - confirm password does not work yet *******************
-				're-password' : {
-					required : false,
-					minlength : 5,
-					maxlength : 20,
-					equalTo : "#password2"
-				}, */
-				age : {
-					required : false,
-					min : 18,
-					max : 100
-				},
-				date : {
-					required : false,
-					date : true
-				},
-				credit : {
-					required : true,
-					creditcard : true
-				},
-				site : {
-					required : true,
-					url : true
-				}
-			}
-		});
-	</script>
+    	}); */
+        </script>
 	<!-- END SCRIPTS -->
 </body>
 </html>

@@ -15,6 +15,8 @@ public interface UserService {
 	List<User> findByEmail(String email);
 	
 	List<User> findByDigitalId(String name);
+	
+	List<User> findByRole(String role);
 
 	User saveUser(User user);
 

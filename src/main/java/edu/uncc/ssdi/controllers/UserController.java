@@ -30,7 +30,7 @@ public class UserController {
 		User u = new User();
 		u.setEmail(email);
 		u.setPassword(password);
-		u.setFirstName(firstName);
+		u.setFirstName(firstName); 
 		u.setLastName(lastName);
 		User retUser = userService.saveUser(u);
 		return retUser;
@@ -41,6 +41,12 @@ public class UserController {
 	public @ResponseBody List<User> getAllUsers() {
 		
 		return (List<User>) userService.findAllUsers();
+	}
+	
+	@RequestMapping(value = "/getUsers/{role}", method = RequestMethod.GET) // Map ONLY GET Requests
+	public @ResponseBody List<User> getAllDoctors(@PathVariable("role") String role) {
+		
+		return (List<User>) userService.findByRole(role);
 	}
 	
 	@RequestMapping(value = "/getUser/{id}", method = RequestMethod.GET)

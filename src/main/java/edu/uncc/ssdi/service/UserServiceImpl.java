@@ -95,5 +95,10 @@ public class UserServiceImpl implements UserService {
 		// TODO Auto-generated method stub
 		return userRepository.findByDigitalId(name);
 	}
+	
+	public List<User> findByRole(String role) {
+		// TODO Auto-generated method stub
+		return userRepository.findByRole(role);
+	}
 
 }
