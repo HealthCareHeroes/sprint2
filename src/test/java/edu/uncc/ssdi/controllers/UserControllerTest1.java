@@ -117,4 +117,20 @@ public class UserControllerTest1 {
 		verify(userService, times(1)).findAllUsers();
 		verifyNoMoreInteractions(userService);
 	}
+	
+	@Test
+	public void testGetUserByRole() throws Exception {
+		ArrayList<User> expected = new ArrayList<User>();
+		expected.add(new User(10002L, "mpq@test.com", "pwd123", "doctor", "Zoe", "Duan", "male", "20", "9201", "APT315",
+				"Charlotte", "NC", "28223", "704123456"));
+		expected.add(new User(10003L, "abc@test.com", "pwd123", "doctor", "Joe", "Smith", "male", "20", "9201",
+				"APT315", "Charlotte", "NC", "28223", "704123456"));
+		when(userService.findByRole("doctor")).thenReturn(expected);
+		mockMvc.perform(get("/getUsers/doctor")).andExpect(status().isOk())
+				.andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8))
+				.andExpect(jsonPath("$[0].id", is(10002))).andExpect(jsonPath("$[0].email", is("mpq@test.com")))
+				.andExpect(jsonPath("$[1].id", is(10003))).andExpect(jsonPath("$[1].role", is("doctor")));
+		verify(userService, times(1)).findByRole("doctor");
+		verifyNoMoreInteractions(userService);
+	}
 } // end of class

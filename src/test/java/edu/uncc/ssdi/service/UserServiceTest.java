@@ -9,6 +9,9 @@ import org.mockito.MockitoAnnotations;
 import static org.junit.Assert.assertEquals;
 import static org.mockito.Mockito.when;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.mockito.runners.MockitoJUnitRunner;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -44,6 +47,9 @@ public class UserServiceTest {
 
 	@Mock
 	private User testUser;
+	
+	@Mock 
+	private ArrayList<User> doctors ;
 	// @InjectMocks
 
 	@Before
@@ -55,15 +61,15 @@ public class UserServiceTest {
 	// Testing Data Field
 	long id = 10000;
 
-	@Test
-	public void testSaveUser() {
+	//@Test
+/*	public void testSaveUser() {
 		// Arrange
 		when(userRepository.save(testUser)).thenReturn(testUser);
 		// Act
 		User savedUser = userServiceImpl.saveUser(testUser);
 		// Assert
 		assertEquals(savedUser, testUser);
-	}
+	}*/
 
 	@Test
 	public void testUserfindById() {
@@ -73,5 +79,15 @@ public class UserServiceTest {
 		User user = userServiceImpl.findById(id);
 		// Assert
 		assertEquals(user, testUser);
+	}
+	
+	@Test
+	public void testUserfindByRole() {
+		// Arrange
+		when(userRepository.findByRole("doctor")).thenReturn(doctors);
+		// Act
+		List<User> users = userServiceImpl.findByRole("doctor");
+		// Assert
+		assertEquals(users, doctors);
 	}
 } // end of class
