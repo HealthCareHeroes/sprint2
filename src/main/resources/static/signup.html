@@ -185,11 +185,13 @@
 								}
 							} // end of $scope.pwdCheck function
 							$scope.submit = function() {
+								
 								var Parameters = {
 									firstName : $scope.firstName,
 									lastName : $scope.lastName,
 									email : $scope.email,
 									password : $scope.password
+									// set role to patient in UserController
 								};
 								// add the user
 								var urlBase = "http://localhost:8080/addUser";
