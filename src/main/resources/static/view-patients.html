@@ -22,11 +22,11 @@
 				<li class="xn-logo"><a href="index.html">Healthify</a> <a
 					href="#" class="x-navigation-control"></a></li>
 				<li class="xn-profile"><a href="#" class="profile-mini"> <img
-						src="assets/images/users/avatar.jpg" alt="pic missing" />
+						src="assets/images/users/userProfile.jpg" alt="picture" />
 				</a>
 					<div class="profile">
 						<div class="profile-image">
-							<img src="assets/images/users/avatar.jpg" alt="John Doe" />
+							<img src="assets/images/users/userProfile.jpg" alt="picture" />
 						</div>
 						<div class="profile-data">
 							<div class="profile-data-name"></div>
@@ -199,16 +199,8 @@
 											+ '<td>' + patient.firstName + '</td>'
 											+ '<td>' + patient.lastName + '</td>'
 											+ '<td>' + patient.email + '</td>'
-											
-											// INSERT "Request Access" button here *******************
-											/* + '<td>' + <button type="submit"
-												onclick="requestAccess();">Request Access</button> + '</td>' */
-											
-											//+ '<td.innerHTML = '<input type="button">Button</input>'>' + Test + '</td>'
-											
-											// td.innerHTML = '<input type="button"...';
-											
-											
+											// "Request Access" button
+											+ "<td><div><button class='requestAccess'>Request Access</button></div></td>"
 											+ '</tr>';
 									$('#patients tbody').append(recordRow);
 								});
@@ -219,6 +211,13 @@
 							}
 						});
 					}
+					
+					// function for "requestAccess"
+					$("body").on("click","#requestAccess",function(ev){
+						// do stuff for requesting access
+				        
+				    });
+					
 				})
 		/*$(document).ready(function() {
 			var session = sessionStorage.getItem("userid");
