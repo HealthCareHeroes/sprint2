@@ -365,7 +365,7 @@
                                 </div>
                                 -->
 							<div class="panel-body">
-								<table id="medRecords" class="table datatable" datatable="ng"
+								<table id="doctors" class="table datatable" datatable="ng"
 									dt-options="vm.dtOptions">
 									<thead>
 										<tr>
@@ -496,7 +496,7 @@
 											+ '<td>' + doctor.state + '</td>' 
 											+ '<td>' + doctor.zip + '</td>' +
 											'</tr>';
-									$('#medRecords tbody').append(recordRow);
+									$('#doctors tbody').append(recordRow);
 								});
 							},
 							error : function(e) {

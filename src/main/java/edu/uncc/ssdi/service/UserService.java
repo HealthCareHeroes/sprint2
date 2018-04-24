@@ -33,4 +33,4 @@ public interface UserService {
 	User validateUser(Login login);
 
 	User validateEmail(String email);
-}
+} // end of class

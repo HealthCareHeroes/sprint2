@@ -77,7 +77,7 @@
 						<!-- START DATATABLE EXPORT -->
 						<div class="panel panel-default">
 							<div class="panel-body">
-								<table id="medRecords" class="table datatable" datatable="ng"
+								<table id="patients" class="table datatable" datatable="ng"
 									dt-options="vm.dtOptions">
 									<thead>
 										<tr>
@@ -195,16 +195,22 @@
 							url : "http://localhost:8080/getUsers/patient",
 							success : function(result) {
 								$.each(result, function(i, patient) {
-									var recordRow = '<tr>' + '<td>'
-											+ patient.firstName + '</td>'
-											+ '<td>' + patient.lastName
-											+ '</td>' + '<td>' + patient.email
-											+ '</td>' +
-											// INSERT "Request Access" button here *******************
+									var recordRow = '<tr>' 
+											+ '<td>' + patient.firstName + '</td>'
+											+ '<td>' + patient.lastName + '</td>'
+											+ '<td>' + patient.email + '</td>'
 											
-											'</tr>';
-									// change this later
-									$('#medRecords tbody').append(recordRow);
+											// INSERT "Request Access" button here *******************
+											/* + '<td>' + <button type="submit"
+												onclick="requestAccess();">Request Access</button> + '</td>' */
+											
+											//+ '<td.innerHTML = '<input type="button">Button</input>'>' + Test + '</td>'
+											
+											// td.innerHTML = '<input type="button"...';
+											
+											
+											+ '</tr>';
+									$('#patients tbody').append(recordRow);
 								});
 							},
 							error : function(e) {

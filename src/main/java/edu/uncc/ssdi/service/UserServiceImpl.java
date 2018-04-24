@@ -1,5 +1,4 @@
 package edu.uncc.ssdi.service;
-
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,40 +14,31 @@ import edu.uncc.ssdi.util.DataExistsErrorException;
 @Service("userService")
 @Transactional
 public class UserServiceImpl implements UserService {
-
 	@Autowired
 	private UserRepository userRepository;
-
 	@Autowired
 	private Systems sysObject;
-
 	@Autowired
 	private UserDao userdao;
 
 	public User findById(Long id) {
 		return userRepository.findOne(id);
 	}
-	
-    @Autowired
-    public void setUserRepository(UserRepository userRepository) {
-        this.userRepository = userRepository;
-        
-    }
+
+	@Autowired
+	public void setUserRepository(UserRepository userRepository) {
+		this.userRepository = userRepository;
+	}
 
 	public User saveUser(User user) {
-
 		String id = null;
 		try {
 			id = sysObject.generateDigitalProfileKey(user.getId());
-
 			if (findByDigitalId(id).size() > 0)
 				throw new DataExistsErrorException("Digital Id Already exists");
-
 			user.setDigitalId(id);
 			System.out.println("->" + id);
-
 		} catch (DataExistsErrorException e) {
-
 			e.printStackTrace();
 		}
 		return userRepository.save(user);
@@ -75,9 +65,7 @@ public class UserServiceImpl implements UserService {
 	}
 
 	public User validateUser(Login login) {
-
 		return userdao.validateUser(login);
-
 	}
 
 	@Override
@@ -95,10 +83,9 @@ public class UserServiceImpl implements UserService {
 		// TODO Auto-generated method stub
 		return userRepository.findByDigitalId(name);
 	}
-	
+
 	public List<User> findByRole(String role) {
 		// TODO Auto-generated method stub
 		return userRepository.findByRole(role);
 	}
-
-}
+} // end of class
