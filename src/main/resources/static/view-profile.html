@@ -9,8 +9,7 @@
 <link rel="icon" href="favicon.ico" type="image/x-icon" />
 <!-- END META SECTION -->
 <!-- CSS INCLUDE -->
-<link rel="stylesheet" type="text/css" id="theme"
-	href="css/theme-default.css" />
+<link rel="stylesheet" type="text/css" id="theme" href="css/theme-default.css" />
 <!-- EOF CSS INCLUDE -->
 </head>
 <body ng-app="userManagerApp">
@@ -38,8 +37,7 @@
 								class="fa fa-info"></span></a> <a href="pages-messages.html"
 								class="profile-control-right"><span class="fa fa-envelope"></span></a>
 						</div> -->
-					</div>
-				</li>
+					</div></li>
 				<!-- <li class="xn-title">Navigation</li>
 				<li><a href="index.html"><span class="fa fa-desktop"></span>
 						<span class="xn-text">Dashboard</span></a></li>
@@ -227,18 +225,6 @@
 		<div class="page-content">
 			<!-- START X-NAVIGATION VERTICAL -->
 			<ul class="x-navigation x-navigation-horizontal x-navigation-panel">
-				<!-- TOGGLE NAVIGATION -->
-				<!-- <li class="xn-icon-button"><a href="#"
-					class="x-navigation-minimize"> <span class="fa fa-dedent"></span></a>
-				</li> -->
-				<!-- END TOGGLE NAVIGATION -->
-				<!-- SEARCH -->
-				<!-- <li class="xn-search">
-					<form role="form">
-						<input readonly type="text" name="search" placeholder="Search" />
-					</form>
-				</li> -->
-				<!-- END SEARCH -->
 				<!-- SIGN OUT -->
 				<li class="xn-icon-button pull-right"><a href="#"
 					class="mb-control" data-box="#mb-signout"><span
@@ -338,13 +324,6 @@
 				<!-- END TASKS -->
 			</ul>
 			<!-- END X-NAVIGATION VERTICAL -->
-			<!-- START BREADCRUMB -->
-			<!-- <ul class="breadcrumb">
-				<li><a href="#">Home</a></li>
-				<li><a href="#">Profile</a></li>
-				<li class="active">View Profile</li>
-			</ul> -->
-			<!-- END BREADCRUMB -->
 			<!-- PAGE TITLE -->
 			<div class="page-title">
 				<h2>
@@ -352,7 +331,6 @@
 				</h2>
 			</div>
 			<!-- END PAGE TITLE -->
-			
 			<!-- PAGE CONTENT WRAPPER -->
 			<div class="page-content-wrap">
 				<div class="row">
@@ -373,9 +351,8 @@
 									<div class="form-group">
 										<label class="col-md-3 control-label">Email:</label>
 										<div class="col-md-9">
-											<input style="color: #616161; "
-												id="email"
-												readonly type="text" value="" ng-model="email" name="email"
+											<input style="color: #616161;" id="email" readonly
+												type="text" value="" ng-model="email" name="email"
 												class="form-control" /> <span class="help-block">Cannot
 												change</span>
 										</div>
@@ -389,7 +366,6 @@
 												value="" /> <span class="help-block">Cannot change</span>
 										</div>
 									</div>
-
 									<!-- Last Name -->
 									<div class="form-group">
 										<label class="col-md-3 control-label">Last Name:</label>
@@ -408,20 +384,15 @@
 												value="" />
 										</div>
 									</div>
-								
-									
-							
 									<!-- Age -->
 									<div class="form-group">
 										<label class="col-md-3 control-label">Age:</label>
 										<div class="col-md-9">
 											<input id="age" readonly type="number" class="form-control"
-												ng-blur="ageCheck()" name="age" ng-model="age"/>
-												<span id="errorage" class="signupSpan"> </span>
+												ng-blur="ageCheck()" name="age" ng-model="age" /> <span
+												id="errorage" class="signupSpan"> </span>
 										</div>
 									</div>
-									
-								
 									<!-- Address 1 -->
 									<div class="form-group">
 										<label class="col-md-3 control-label">Address Line 1:</label>
@@ -480,7 +451,6 @@
 											id="update" type="submit">Update</button>
 									</div>
 								</div>
-							
 							</form>
 							<!-- END JQUERY VALIDATION PLUGIN -->
 						</div>
@@ -515,7 +485,6 @@
 		</div>
 	</div>
 	<!-- END MESSAGE BOX-->
-
 	<!-- START PRELOADS -->
 	<audio id="audio-alert" src="audio/alert.mp3" preload="auto"></audio>
 	<audio id="audio-fail" src="audio/fail.mp3" preload="auto"></audio>
@@ -549,7 +518,6 @@
 	<script type="text/javascript" src="js/plugins.js"></script>
 	<script type="text/javascript" src="js/actions.js"></script>
 	<!-- END TEMPLATE -->
-
 	<script
 		src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"
 		type="text/javascript">
@@ -566,7 +534,6 @@
 		//       $scope.message = "Hello";
 		//     });
 	</script>
-
 	<script type="text/javascript">
 		// Edit Profile - change fields from read only to editable ************************************
 		function editable() {
@@ -592,20 +559,17 @@
 			document.getElementById("zip").readOnly = false;
 			document.getElementById("phone").readOnly = false;
 		}
-
 		/* 	var genderDisplay;		
 			var gender1 = document.getElementById("gender1").value;
 			if (gender1 != null)
 				 genderDisplay = gender1;			 
 			else genderDisplay = document.getElementById("gender").value; */
-
 		$(document)
 				.ready(
 						function() {
 							var session = sessionStorage.getItem("userid");
 							var urls = "http://localhost:8080/getUser/"
 									+ session
-							//	alert(urls);
 							$
 									.ajax({
 										url : urls
@@ -684,12 +648,11 @@
 														contentType : 'application/json',
 														dataType : "json",
 														processdata : false
-
 													})
 											.then(
 													function(data) {
 														// if data not null, should display the alert
-														// NOTE: Comment above is NOT coded yet *********************************
+														// NOTE: Comment above is NOT coded yet ************
 														alert("Data updated successfully");
 														sessionStorage.setItem(
 																"userid",
@@ -699,7 +662,6 @@
 													});
 								}
 							}
-							
 							$scope.ageCheck = function() {
 								var age = $scope.age;
 								// If the passwords match
@@ -731,14 +693,6 @@
 					minlength : 5,
 					maxlength : 20
 				},
-				// NOTE - Not needed for view page
-				/* // TO DO - confirm password does not work yet *******************
-				're-password' : {
-					required : false,
-					minlength : 5,
-					maxlength : 20,
-					equalTo : "#password2"
-				}, */
 				age : {
 					required : false,
 					min : 18,
