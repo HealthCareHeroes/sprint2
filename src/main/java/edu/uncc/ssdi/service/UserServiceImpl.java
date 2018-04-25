@@ -88,4 +88,15 @@ public class UserServiceImpl implements UserService {
 		// TODO Auto-generated method stub
 		return userRepository.findByRole(role);
 	}
+	
+	// request access to a patient's medical history
+	public void requestAccess() {
+		/* When "Request Access" button is clicked on "Patients" page,
+		 *  
+		 */
+		
+	}
+	
+	
+	
 } // end of class
