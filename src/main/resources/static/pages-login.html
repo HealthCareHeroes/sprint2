@@ -68,6 +68,9 @@
 									email : $scope.email,
 									password : $scope.password
 								};
+								var userRole = {
+									userRole : $scope.role
+								};
 								$
 										.ajax(
 												{
@@ -82,13 +85,33 @@
 														sessionStorage.setItem(
 																"userid",
 																data.id);
-														window.location
-																.replace("http://localhost:8080/index.html");
+														sessionStorage.setItem(
+																"role",
+																data.role);
+														
+														// if role "patient," redirect to patient version
+														//var userRole : $scope.role;
+														if (data.role = "patient") {
+															alert("Welcome, patient "
+																	+ data.firstName);
+															window.location
+																	.replace("http://localhost:8080/index.html");
+														}
+														// if role "doctor," redirect to doctor version
+														else {
+															alert("Welcome, Doctor");
+															window.location
+																	.replace("http://localhost:8080/index.html");
+														}
+														
+														//window.location
+														//		.replace("http://localhost:8080/index.html");
 													}
+													
 													document
 															.getElementById("error").innerHTML = "Invalid login credentials. Please try again.";
 												});
-							}
+							} // end of submit function
 						})
 	</script>
 </body>

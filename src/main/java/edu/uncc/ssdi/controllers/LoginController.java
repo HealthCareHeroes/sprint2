@@ -28,6 +28,14 @@ public class LoginController {
 		System.out.println(login.getUserName());
 		System.out.println(login.getPassword());
 		User user = userservice.validateUser(login);
+		/*if (user.getRole() == "patient") {
+			// redirect PATIENT to home page and print something
+			System.out.println("Welcome, Patient!");
+		}
+		else if (user.getRole() == "doctor") {
+			// redirect DOCTOR to home page and print something
+			System.out.println("Welcome, Doctor!");
+		}*/
 		return user;
 	}
 } // end of class

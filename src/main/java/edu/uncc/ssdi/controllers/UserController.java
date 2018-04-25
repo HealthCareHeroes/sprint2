@@ -41,13 +41,11 @@ public class UserController {
 	// not used in Sprint 1 or 2
 	@RequestMapping(value = "/getUsers", method = RequestMethod.GET) // Map ONLY GET Requests
 	public @ResponseBody List<User> getAllUsers() {
-		
 		return (List<User>) userService.findAllUsers();
 	}
 	
 	@RequestMapping(value = "/getUsers/{role}", method = RequestMethod.GET) // Map ONLY GET Requests
 	public @ResponseBody List<User> getAllDoctors(@PathVariable("role") String role) {
-		
 		return (List<User>) userService.findByRole(role);
 	}
 	
