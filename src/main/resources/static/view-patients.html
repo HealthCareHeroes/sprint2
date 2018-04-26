@@ -84,7 +84,6 @@
 											<th>First Name</th>
 											<th>Last Name</th>
 											<th>Email</th>
-											<th>Request Access</th>
 										</tr>
 									</thead>
 									<tbody>
@@ -199,8 +198,6 @@
 											+ '<td>' + patient.firstName + '</td>'
 											+ '<td>' + patient.lastName + '</td>'
 											+ '<td>' + patient.email + '</td>'
-											// "Request Access" button
-											+ "<td><div><button class='requestAccess'>Request Access</button></div></td>"
 											+ '</tr>';
 									$('#patients tbody').append(recordRow);
 								});
@@ -211,15 +208,6 @@
 							}
 						});
 					}
-					
-					// function for "requestAccess"
-					$("body").on("click",".requestAccess",function(ev){
-						// do stuff for requesting access
-				        
-						// alert the doctor
-						alert("Request successfully sent to: " + patient.firstName + " " + patient.lastName);
-				    });
-					
 				})
 		/*$(document).ready(function() {
 			var session = sessionStorage.getItem("userid");

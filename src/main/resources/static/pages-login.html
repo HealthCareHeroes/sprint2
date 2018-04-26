@@ -81,17 +81,17 @@
 										.then(
 												function(data) {
 													if (data.id != null) {
-														alert("Login Successful!");
+														alert("Login Successful! " + "Role: " + data.role);
+														
 														sessionStorage.setItem(
 																"userid",
 																data.id);
-														sessionStorage.setItem(
+														/* sessionStorage.setItem(
 																"role",
-																data.role);
-														
+																data.role); */
 														// if role "patient," redirect to patient version
 														//var userRole : $scope.role;
-														if (data.role = "patient") {
+														/* if (data.role = "patient") {
 															alert("Welcome, patient "
 																	+ data.firstName);
 															window.location
@@ -102,12 +102,10 @@
 															alert("Welcome, Doctor");
 															window.location
 																	.replace("http://localhost:8080/index.html");
-														}
-														
-														//window.location
-														//		.replace("http://localhost:8080/index.html");
+														} */
+														window.location
+																.replace("http://localhost:8080/index.html");
 													}
-													
 													document
 															.getElementById("error").innerHTML = "Invalid login credentials. Please try again.";
 												});

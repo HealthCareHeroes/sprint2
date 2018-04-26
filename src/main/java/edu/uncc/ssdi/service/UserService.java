@@ -31,8 +31,4 @@ public interface UserService {
 	User validateUser(Login login);
 
 	User validateEmail(String email);
-	
-	// request access to a patient's medical history
-	void requestAccess();
-	
 } // end of class

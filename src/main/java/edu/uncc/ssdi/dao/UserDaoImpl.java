@@ -59,6 +59,7 @@ public class UserDaoImpl implements UserDao {
 			user.setId(Integer.valueOf(rs.getString("id")));
 			user.setEmail((rs.getString("email")));
 			user.setFirstName((rs.getString("first_name")));
+			user.setRole((rs.getString("role")));
 			return user;
 		}
 	} // end of UserMapper class

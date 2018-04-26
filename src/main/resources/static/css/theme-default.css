@@ -13,6 +13,30 @@
 @import "dropzone/dropzone.css";
 @import "animate/animate.min.css";
 
+/* Hide parts of nav bar depending on who is logged in */
+#main_nav {
+    display: none;
+}
+.with_nav #main_nav {
+    display: block;
+}
+
+/* li#patient { 
+    visibility: visible;
+}
+
+li#doctor { 
+    visibility: visible;
+}
+
+li.patient { 
+    visibility: visible;
+}
+
+li.doctor { 
+    visibility: visible;
+} */
+
 /* PREDEFINED CLASSES */
 /* Signup page - label */
 .signupLabel {
@@ -224,7 +248,7 @@ body {
   -o-transition: all 200ms ease;
   transition: all 200ms ease;
 }
-.page-container.page-navigation-toggled .page-content {
+.page-container.page-igation-toggled .page-content {
   margin-left: 50px;
 }
 .page-container.page-mode-rtl .page-sidebar {
