@@ -14,12 +14,12 @@
 @import "animate/animate.min.css";
 
 /* Hide parts of nav bar depending on who is logged in */
-#main_nav {
+/* #main_nav {
     display: none;
 }
 .with_nav #main_nav {
     display: block;
-}
+} */
 
 /* li#patient { 
     visibility: visible;

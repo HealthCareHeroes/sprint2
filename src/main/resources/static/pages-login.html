@@ -66,11 +66,12 @@
 							$scope.submit = function() {
 								var login = {
 									email : $scope.email,
-									password : $scope.password
-								};
-								var userRole = {
+									password : $scope.password,
 									userRole : $scope.role
 								};
+								/* var userRole = {
+									userRole : $scope.role
+								}; */
 								$
 										.ajax(
 												{
@@ -82,7 +83,6 @@
 												function(data) {
 													if (data.id != null) {
 														alert("Login Successful! " + "Role: " + data.role);
-														
 														sessionStorage.setItem(
 																"userid",
 																data.id);

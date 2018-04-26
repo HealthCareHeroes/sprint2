@@ -47,10 +47,13 @@
 					<li><a href="/view-profile.html">Profile</a></li>
 					<li><a href="/permissions.html">Permissions</a></li>
 					<li><a href="/medical-history.html">Medical History</a></li>
+					<li><a href="/view-doctor.html">Doctors</a></li>
+					<li><a href="/view-patients.html">Patients</a></li>
+					
 					<!-- Make Doctors page visible to Patients only -->
-					<li id ="doctor"><a href="/view-doctor.html">Doctors</a></li>
+					<!-- <li id="doctor"><a href="/view-doctor.html">Doctors</a></li> -->
 					<!-- Make Patients page visible to Doctors only -->
-					<li id ="patient"><a href="/view-patients.html">Patients</a></li>
+					<!-- <li id="patient"><a href="/view-patients.html">Patients</a></li> -->
 				</ul>
 			</div>
 		</div>
@@ -161,42 +164,63 @@
 		src="js/plugins/daterangepicker/daterangepicker.js"></script>
 	<!-- END THIS PAGE PLUGINS-->
 	<!-- START TEMPLATE -->
-	
+
 	<!-- <script type="text/javascript" src="js/settings.js"></script> -->
 	<!-- <script type="text/javascript" src="js/plugins.js"></script> -->
 	<!-- <script type="text/javascript" src="js/actions.js"></script> -->
 	<!-- <script type="text/javascript" src="js/demo_dashboard.js"></script> -->
 	<script
 		src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+	<script
+		src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 	<!-- END TEMPLATE -->
 	<!-- END SCRIPTS -->
 	<script type="text/javascript">
 		var app = angular.module("app", []);
 		app.controller("HelloController", function($scope) {
 			$scope.message = $window.sessionStorage.getItem("userid");
+			//$scope.message2 = $window.sessionStorage.getItem("role");
 		});
-		
+
 		// function for user ROLE *****************************************************
-		$(document).ready(function() {
-			//var session = sessionStorage.getItem("role");
+		// one way I tried, did not work
+		/* $(document).ready(function() {
 			var session = sessionStorage.getItem("role");
+			//var session = window.sessionStorage.getItem("role");
 			alert("This is a TEST: session is: " + session);
 			var patientLink = document.getElementById("patient");
 			var doctorLink = document.getElementById("doctor");
 			// if role = "patient"
+			patientLink.style.visibility = "visible";
+			doctorLink.style.visibility = "visible";
 			if (session == "patient") {
 				alert("You are a patient!");
 				patientLink.style.visibility = "hidden";
 				doctorLink.style.visibility = "visible";
 			}
-			// if role = "doctor"
-			else if (session == "doctor") {
-				alert("You are a Doctor!");
-				patientLink.style.visibility = "visible";
-				doctorLink.style.visibility = "hidden";
-			}
-		});
+		}); */
+
+		// function for user ROLE *****************************************************
+		// also did not work
+		// 		$(document).ready(function() {
+		// 			//var session = sessionStorage.getItem("role");
+		// 			var session = sessionStorage.getItem("role");
+		// 			alert("This is a TEST: session is: " + session);
+		// 			var patientLink = document.getElementById("patient");
+		// 			var doctorLink = document.getElementById("doctor");
+		// 			// if role = "patient"
+		// 			if (session == "patient") {
+		// 				alert("You are a patient!");
+		// 				patientLink.style.visibility = "hidden";
+		// 				doctorLink.style.visibility = "visible";
+		// 			}
+		// 			// if role = "doctor"
+		// 			/* else if (session == "doctor") {
+		// 				alert("You are a Doctor!");
+		// 				patientLink.style.visibility = "visible";
+		// 				doctorLink.style.visibility = "hidden";
+		// 			} */
+		// 		});
 	</script>
 </body>
 </html>
