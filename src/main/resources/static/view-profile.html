@@ -375,9 +375,18 @@
 												value="" /> <span class="help-block">Cannot change</span>
 										</div>
 									</div>
-									<!-- Last Name -->
+									<!-- Role -->
 									<div class="form-group">
-										<label class="col-md-3 control-label">Password</label>
+										<label class="col-md-3 control-label">Role:</label>
+										<div class="col-md-9">
+											<input style="color: #616161;" id="role" readonly
+												type="text" ng-model="role" class="form-control"
+												value="" /> <span class="help-block">Cannot change</span>
+										</div>
+									</div>
+									<!-- Password -->
+									<div class="form-group">
+										<label class="col-md-3 control-label">Password:</label>
 										<div class="col-md-9">
 											<input style="color: #616161;" id="password" readonly
 												type="text" ng-model="password" class="form-control"
@@ -544,6 +553,7 @@
 			//document.getElementById("email").readOnly = true;
 			//document.getElementById("firstName").readOnly = true;
 			//document.getElementById("lastName").readOnly = true;
+			//document.getElementById("role").readOnly = true;
 			document.getElementById("age").readOnly = false;
 			document.getElementById("password").readOnly = false;
 			/* // male
@@ -583,6 +593,8 @@
 												document
 														.getElementById("lastName").value = data.lastName;
 												document
+														.getElementById("role").value = data.role;
+												document
 														.getElementById("password").value = data.password;
 												document.getElementById("age").value = data.age;
 												//document.getElementById("dob").value = data.dob;
@@ -598,11 +610,11 @@
 												document
 														.getElementById("phone").value = data.phone;
 												document.getElementById("zip").value = data.zip;
-												$('.profile-data-name')
+												/* $('.profile-data-name')
 														.append(
 																data.firstName
 																		+ " "
-																		+ data.lastName);
+																		+ data.lastName); */
 											});
 						});
 		var id = sessionStorage.getItem("userid");
@@ -621,6 +633,9 @@
 											.getElementById("firstName").value,
 									lastName : document
 											.getElementById("lastName").value,
+									// role
+									role : document
+											.getElementById("role").value,
 									//gender : document.getElementById("gender").value,
 									age : document.getElementById("age").value,
 									addressLine1 : document

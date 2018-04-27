@@ -14,21 +14,15 @@
 @import "animate/animate.min.css";
 
 /* Hide parts of nav bar depending on who is logged in */
-/* #main_nav {
-    display: none;
-}
+/*#main_nav {
+    display: block;
+} */
+/* 
 .with_nav #main_nav {
     display: block;
 } */
 
-/* li#patient { 
-    visibility: visible;
-}
-
-li#doctor { 
-    visibility: visible;
-}
-
+/* 
 li.patient { 
     visibility: visible;
 }
@@ -357,6 +351,17 @@ body.page-container-boxed .page-container {
   -o-transition: color 200ms ease;
   transition: color 200ms ease;
 }
+
+/* Navigation bar - li > a class "patient" make not visible when logged in as patient ******************/
+/* .x-navigation li > a .patient {
+	visibility: visible;
+} */
+
+/* Navigation bar - li > a class "patient" make not visible when logged in as patient ******************/
+/* .x-navigation li > a #patient {
+	visibility: visible;
+} */
+
 .x-navigation li > a:hover {
   background: #262a33;
   color:#fff;

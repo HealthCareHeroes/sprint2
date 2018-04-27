@@ -140,15 +140,15 @@ public class UserControllerTest1 {
 	@Test
 	public void testGetUserByRolePatient() throws Exception {
 		ArrayList<User> expected = new ArrayList<User>();
-		expected.add(new User(102L, "example@test.com", "pwd8765", "patient", "Ashley", "Jones", "female", "23", "9201 University City Blvd", "APT300",
+		expected.add(new User(10004L, "example@test.com", "pwd8765", "patient", "Ashley", "Jones", "female", "23", "9201 University City Blvd", "APT300",
 				"Charlotte", "NC", "28223", "7044444434"));
-		expected.add(new User(103L, "abc@example.fake", "pwd1234", "patient", "George", "Chu", "male", "55", "9000 University Street",
+		expected.add(new User(10005L, "patient@example.fake", "pwd1234", "patient", "George", "Chu", "male", "55", "9000 University Street",
 				"APT788", "Charlotte", "NC", "28223", "7041113321"));
 		when(userService.findByRole("patient")).thenReturn(expected);
 		mockMvc.perform(get("/getUsers/patient")).andExpect(status().isOk())
 				.andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8))
-				.andExpect(jsonPath("$[0].id", is(10002))).andExpect(jsonPath("$[0].email", is("example@test.com")))
-				.andExpect(jsonPath("$[1].id", is(10003))).andExpect(jsonPath("$[1].role", is("patient")));
+				.andExpect(jsonPath("$[0].id", is(10004))).andExpect(jsonPath("$[0].email", is("example@test.com")))
+				.andExpect(jsonPath("$[1].id", is(10005))).andExpect(jsonPath("$[1].role", is("patient")));
 		verify(userService, times(1)).findByRole("patient");
 		verifyNoMoreInteractions(userService);
 	}

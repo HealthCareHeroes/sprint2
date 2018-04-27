@@ -26,7 +26,6 @@ import edu.uncc.ssdi.repositories.*;
 public class UserServiceTest {
 	@Autowired
 	private MockMvc mockMvc;
-
 	private UserServiceImpl userServiceImpl;
 
 	@Bean
@@ -50,6 +49,9 @@ public class UserServiceTest {
 	
 	@Mock 
 	private ArrayList<User> doctors ;
+	
+	@Mock 
+	private ArrayList<User> patients ;
 	// @InjectMocks
 
 	@Before
@@ -89,5 +91,15 @@ public class UserServiceTest {
 		List<User> users = userServiceImpl.findByRole("doctor");
 		// Assert
 		assertEquals(users, doctors);
+	}
+	
+	@Test
+	public void testUserfindByRolePatient() {
+		// Arrange
+		when(userRepository.findByRole("patient")).thenReturn(patients);
+		// Act
+		List<User> users = userServiceImpl.findByRole("patient");
+		// Assert
+		assertEquals(users, patients);
 	}
 } // end of class
