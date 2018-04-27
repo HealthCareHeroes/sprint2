@@ -13,6 +13,7 @@ import javax.persistence.Lob;
 import javax.persistence.Table;
 
 import org.hibernate.annotations.ColumnDefault;
+import org.hibernate.annotations.ForeignKey;
 
 
 @Entity
@@ -22,8 +23,14 @@ public class BlobFileStorage {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name = "FILE_ID")
-	@ColumnDefault("80100")
 	private long fileId;
+	
+	@Column(name = "MED_ID")
+	private long medId;
+	
+	@Column(name = "DIGITAL_ID")
+	private String digitalID;
+	
 	
 	@Column(name = "FILE_NAME")
 	private String filename;
@@ -41,7 +48,9 @@ public class BlobFileStorage {
 	@Column(name = "CREATION_DT")
 	private Date created;
 
-	
+	BlobFileStorage(){
+		
+	}
 	
 	
 	public BlobFileStorage(long fileId, String description, String filename, Blob content,
@@ -103,5 +112,28 @@ public class BlobFileStorage {
 	public void setCreated(Date created) {
 		this.created = created;
 	}
+
+
+	public String getDigitalID() {
+		return digitalID;
+	}
+
+
+	public void setDigitalID(String digitalID) {
+		this.digitalID = digitalID;
+	}
+
+
+	public long getMedId() {
+		return medId;
+	}
+
+
+	public void setMedId(long medId) {
+		this.medId = medId;
+	}
+	
+	
+	
 
 }

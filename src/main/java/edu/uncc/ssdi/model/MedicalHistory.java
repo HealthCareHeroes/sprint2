@@ -38,14 +38,12 @@ public class MedicalHistory {
 
 	private String releaseStatus;
 
-	private Set<BlobFileStorage> listsOfId = new HashSet<BlobFileStorage>(0);
-
-	    public MedicalHistory()  {
+	public MedicalHistory()  {
 	    	super();
 	    }
 	
 	public MedicalHistory(Long medId, String digitalId, Date dateOfVisit,Date dateOfRelease, String hospitalName, String purposeOfVisit,
-			String doctorName, String doctorStatement, String releaseStatus, Set<BlobFileStorage> listsOfId) {
+			String doctorName, String doctorStatement, String releaseStatus) {
 		super();
 		this.medId = medId;
 		this.digitalId = digitalId;
@@ -56,7 +54,7 @@ public class MedicalHistory {
 		this.doctorName = doctorName;
 		this.doctorStatement = doctorStatement;
 		this.releaseStatus = releaseStatus;
-		this.listsOfId = listsOfId;
+		
 	}
 
 	@Id
@@ -142,21 +140,6 @@ public class MedicalHistory {
 
 	public void setReleaseStatus(String releaseStatus) {
 		this.releaseStatus = releaseStatus;
-	}
-
-	@Column(name = "LIST_ID", nullable = true)
-	@OneToMany
-    @JoinTable(
-            name="HISTORY_STORAGE",
-            joinColumns = @JoinColumn( name="DIGITAL_ID")
-           , inverseJoinColumns = @JoinColumn( name="LIST_ID")
-    )
-	public Set<BlobFileStorage> getListsOfId() {
-		return listsOfId;
-	}
-
-	public void setListsOfId(Set<BlobFileStorage> listsOfId) {
-		this.listsOfId = listsOfId;
 	}
 
 }

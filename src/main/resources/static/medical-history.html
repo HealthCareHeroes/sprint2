@@ -22,11 +22,11 @@
 				<li class="xn-logo"><a href="index.html">Healthify</a> <a
 					href="#" class="x-navigation-control"></a></li>
 				<li class="xn-profile"><a href="#" class="profile-mini"> <img
-						src="assets/images/users/userProfile.jpg" alt="picture" />
+						src="assets/images/users/avatar.jpg" alt="pic missing" />
 				</a>
 					<div class="profile">
 						<div class="profile-image">
-							<img src="assets/images/users/userProfile.jpg" alt="picture" />
+							<img src="assets/images/users/avatar.jpg" alt="John Doe" />
 						</div>
 						<div class="profile-data">
 							<div class="profile-data-name"></div>
@@ -214,7 +214,6 @@
 					<li><a href="/permissions.html">Permissions</a></li>
 					<li><a href="/medical-history.html">Medical History</a></li>
 					<li><a href="/view-doctor.html">Doctors</a></li>
-					<li><a href="/view-patients.html">Patients</a></li>
 				</ul>
 			</div>
 		</div>
@@ -395,6 +394,7 @@
 											<th>Date of Visit</th>
 											<th>Date of Release</th>
 											<th>Status</th>
+											<th>Attachments</th>
 										</tr>
 									</thead>
 									<tbody>
@@ -494,24 +494,81 @@
 	<script type='text/javascript'
 		src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
 	<script type="text/javascript">
+	
+	
+	   $(".clickable-row").click(function() {
+	        window.location = $(this).data("href");
+	    });
+		 var recordRow = "";
+	  
         $(document).ready(function() {
+        	
+        	var temp = null;
+        	var session = sessionStorage.getItem("userid");
         	ajaxGet();
+        	
+        	function fetchFiles(medId){
+        		 
+        		$.ajax({
+		            method: 'GET',
+		            async:false,
+		            url: "http://localhost:8080/getStorageFile/"+medId,
+		            headers: { "Accept": "application/json;odata=verbose" }
+		        }).success(function (data, status, headers, config) {
+		          //  alert(data[0].accessByUserId + " , "+ data[1].accessByUserId );
+		         if(data.length != 0){
+		          
+		         	
+		          recordRow += '<ul class="list-tags push-up-10">';
+		        for (i = 0; i < data.length; i++) { 
+			        var imageUrl = "http://localhost:8080/getImage/"+data[i].fileId;
+
+		        	//recordRow +=  data[i].contentType + ',';
+		        	
+		        	recordRow += '<li><a href="'+imageUrl +'"><span class="fa fa-tag"></span>'+ data[i].contentType +'</a></li>';
+		        	//recordRow +=  data[i].contentType + ',';
+		        	
+		        	
+		        	
+				}
+		        recordRow += '</ul>';
+		       
+		        
+				
+		        	
+		       }
+				
+		        });
+        		
+        		
+        		recordRow +=  '</td></tr>';
+	        	$('#medRecords tbody').append(recordRow);
+        	
+        	}
+        	
         	// DO GET
         	function ajaxGet(){
         		$.ajax({
         			type : "GET",
-        			url : "http://localhost:8080/history/",
+        			url : "http://localhost:8080/history/"+session,
         			success: function(result){
         				$.each(result, function(i, record){
-        					var recordRow = '<tr>' +
+        					
+        					
+        					
+        					
+        					
+        					
+        					 recordRow = '<tr>' +
         										'<td>' + record.hospitalName + '</td>' +
         										'<td>' + record.doctorName + '</td>' +
         										'<td>' + record.purposeOfVisit + '</td>' +
         										'<td>' + record.dateOfVisit + '</td>' +
         										'<td>' + record.dateOfRelease + '</td>' +
-        										'<td>' + record.releaseStatus + '</td>' +
-        									  '</tr>';
-        					$('#medRecords tbody').append(recordRow);
+        										'<td>' + record.releaseStatus + '</td>' ;
+        										 recordRow +=  '<td>' ;				
+        					fetchFiles(record.medId);			  
+        					
         		        });
         			//	$( "#medRecords tbody tr:odd" ).addClass("info");
         				//$( "#medRecords tbody tr:even" ).addClass("success");
